@@ -1,0 +1,25 @@
+﻿@model IQueryable<Domain.Group>
+@{
+Layout = null;
+}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            @foreach (var group in Model)
+            {
+            <div>id = @group.id; name = @group.name</div>
+            <div style="margin-left:15px;">
+                @foreach (var student in @group.Students)
+                {
+                <div>id = @student.id; name = @student.name</div>
+                }
+            </div>
+            }
+        </div>
+    </body>
+</html>
